@@ -24,5 +24,7 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        binding?.testttt?.progressColor = getColor(R.color.red)
     }
 }
