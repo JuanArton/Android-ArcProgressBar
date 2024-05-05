@@ -26,13 +26,13 @@ dependencyResolutionManagement {
 Then, add dependencies
 ```
 dependencies {
-		implementation 'com.github.JuanArton:Android-ArcProgressBar:0.7'
+	implementation 'com.github.JuanArton:Android-ArcProgressBar:0.7'
 }
 ```
 
 # Attributes And Code
 Attributes :
-```
+```xml
 <com.juanarton.arcprogressbar.ArcProgressBar
         android:layout_width="200dp"
         android:layout_height="200dp"
@@ -52,7 +52,7 @@ Attributes :
 ```
 
 Code (Kotlin) :
-```
+```kotlin
 arcprogressbar.progress = 50f
 arcprogressbar.progressColor = getColor(R.color.red)
 arcprogressbar.trackColor = getColor(R.color.black)
