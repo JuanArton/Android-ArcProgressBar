@@ -6,7 +6,6 @@ import android.graphics.Color
 import android.graphics.Paint
 import android.graphics.RectF
 import android.util.AttributeSet
-import android.util.Log
 import android.view.View
 
 class ArcProgressBar(context: Context, attributes: AttributeSet) : View(context, attributes) {
@@ -18,8 +17,8 @@ class ArcProgressBar(context: Context, attributes: AttributeSet) : View(context,
     private var progressWidth = 20f
     private var trackWidth = 20f
 
-    private var progressColor = Color.parseColor("#7084ff")
-    private var trackColor = Color.parseColor("#676767")
+    private var progressColorValue = Color.parseColor("#7084ff")
+    private var trackColorValue = Color.parseColor("#676767")
 
     private var progressValue = 50f
     private var progressMax = 100f
@@ -35,10 +34,10 @@ class ArcProgressBar(context: Context, attributes: AttributeSet) : View(context,
 
         val typedArray = context.obtainStyledAttributes(attributes, R.styleable.ArcProgressBar)
         try {
-            progressColor = typedArray.getColor(R.styleable.ArcProgressBar_progressColor, progressColor)
+            progressColorValue = typedArray.getColor(R.styleable.ArcProgressBar_progressColor, progressColorValue)
             progressWidth = typedArray.getDimension(R.styleable.ArcProgressBar_progressWidth, progressWidth)
 
-            trackColor = typedArray.getColor(R.styleable.ArcProgressBar_trackColor, trackColor)
+            trackColorValue = typedArray.getColor(R.styleable.ArcProgressBar_trackColor, trackColorValue)
             trackWidth = typedArray.getDimension(R.styleable.ArcProgressBar_trackWidth, trackWidth)
 
             startAngle = typedArray.getFloat(R.styleable.ArcProgressBar_startAngle, startAngle)
@@ -48,16 +47,15 @@ class ArcProgressBar(context: Context, attributes: AttributeSet) : View(context,
             progressMin = typedArray.getFloat(R.styleable.ArcProgressBar_progressMin, progressMin)
             progressValueTmp = typedArray.getFloat(R.styleable.ArcProgressBar_progress, progressValue)
             progressValue = scale(typedArray.getFloat(R.styleable.ArcProgressBar_progress, progressValue), sweepAngle, progressMax, progressMin)
-            Log.d("test", progressValue.toString())
         } finally {
             typedArray.recycle()
         }
 
         progressArc.strokeWidth = progressWidth
-        progressArc.color = progressColor
+        progressArc.color = progressColorValue
 
         trackArc.strokeWidth = trackWidth
-        trackArc.color = trackColor
+        trackArc.color = trackColorValue
 
         progressArc.strokeCap = Paint.Cap.ROUND
         trackArc.strokeCap = Paint.Cap.ROUND
@@ -66,8 +64,6 @@ class ArcProgressBar(context: Context, attributes: AttributeSet) : View(context,
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
 
-        Log.d("start", startAngle.toString())
-        Log.d("sweep", sweepAngle.toString())
         canvas.drawArc(progressRectf, startAngle, sweepAngle, false, trackArc)
 
         if (progressValueTmp in progressMin..progressMax) {
@@ -102,6 +98,20 @@ class ArcProgressBar(context: Context, attributes: AttributeSet) : View(context,
         get() = progressValue
         set(value) {
             progressValue = scale(value, sweepAngle, progressMax, progressMin)
+            invalidate()
+        }
+
+    var progressColor: Int
+        get() = progressArc.color
+        set(value) {
+            progressArc.color = value
+            invalidate()
+        }
+
+    var trackColor: Int
+        get() = trackArc.color
+        set(value) {
+            trackArc.color = value
             invalidate()
         }
 }
