@@ -1,15 +1,29 @@
+<!--
+  Title: Arc Progress Bar
+  Description: An android library to create arc progress bar.
+  Author: Juan Arton Masheli
+  -->
+
+<meta name="author" content="Juan Arton Masheli">
+<meta name="description" content="Android library to create arc progress bar">
+<meta name="copyright" content="Juan Arton Masheli 2024">
+<meta name="keywords" content="arc progress bar, library, arc-progressbar, progressbar">
+
+#Arc Progress Bar
+
+[![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 [![](https://jitpack.io/v/JuanArton/Android-ArcProgressBar.svg)](https://jitpack.io/#JuanArton/Android-ArcProgressBar)
 
-# Description
+##Description
 
 Android library to create arc progress bar with features : ... Just see the screenshots and the xml code
 
-# Screenshots
+## Screenshots
 <img src="https://github.com/JuanArton/Android-ArcProgressBar/blob/main/Screenshots/Screenshot_1714917753.png?raw=true" width=25% height=25%> <img src="https://github.com/JuanArton/Android-ArcProgressBar/blob/main/Screenshots/Screenshot_1714917866.png?raw=true" width=25% height=25%> <img src="https://github.com/JuanArton/Android-ArcProgressBar/blob/main/Screenshots/Screenshot_1714917903.png?raw=true" width=25% height=25%>
 
 <img src="https://github.com/JuanArton/Android-ArcProgressBar/blob/main/Screenshots/Screenshot_1714917918.png?raw=true" width=25% height=25%> <img src="https://github.com/JuanArton/Android-ArcProgressBar/blob/main/Screenshots/Screenshot_1714917945.png?raw=true" width=25% height=25%>
 
-# How To Use
+## How To Use
 Add https://jitpack.io in settings.gradle.kts like this.
 ```
 dependencyResolutionManagement {
@@ -30,7 +44,7 @@ dependencies {
 }
 ```
 
-# Attributes And Code
+## Attributes And Code
 Attributes :
 ```xml
 <com.juanarton.arcprogressbar.ArcProgressBar
@@ -59,5 +73,5 @@ arcprogressbar.trackColor = getColor(R.color.black)
 
 ```
 
-# THANKYOU
+## THANKYOU
 
