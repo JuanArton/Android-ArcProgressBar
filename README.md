@@ -9,12 +9,12 @@
 <meta name="copyright" content="Juan Arton Masheli 2024">
 <meta name="keywords" content="arc progress bar, library, arc-progressbar, progressbar">
 
-#Arc Progress Bar
+# Arc Progress Bar
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 [![](https://jitpack.io/v/JuanArton/Android-ArcProgressBar.svg)](https://jitpack.io/#JuanArton/Android-ArcProgressBar)
 
-##Description
+## Description
 
 Android library to create arc progress bar with features : ... Just see the screenshots and the xml code
 
