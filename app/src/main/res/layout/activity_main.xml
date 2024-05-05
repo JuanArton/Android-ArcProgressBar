@@ -11,14 +11,16 @@
         android:id="@+id/testttt"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        app:progressWidth="10dp"
-        app:trackWidth="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:progress="1"
-        app:progressMin="0"
         app:progressMax="100"
+        app:progressMin="0"
+        app:progressWidth="10dp"
         app:startAngle="140"
         app:sweepAngle="260"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:trackWidth="10dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
