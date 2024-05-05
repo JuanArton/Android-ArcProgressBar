@@ -1,0 +1,13 @@
+<resources>
+    <declare-styleable name="ArcProgressBar">
+        <attr name="progressColor" format="color"/>
+        <attr name="trackColor" format="color"/>
+        <attr name="progressWidth" format="dimension"/>
+        <attr name="trackWidth" format="dimension"/>
+        <attr name="progress" format="float"/>
+        <attr name="progressMax" format="float"/>
+        <attr name="progressMin" format="float"/>
+        <attr name="startAngle" format="float"/>
+        <attr name="sweepAngle" format="float"/>
+    </declare-styleable>
+</resources>
