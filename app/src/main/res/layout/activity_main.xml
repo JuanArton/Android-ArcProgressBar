@@ -15,12 +15,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:progress="1"
+        app:progress="70"
         app:progressMax="100"
         app:progressMin="0"
-        app:progressWidth="10dp"
-        app:startAngle="140"
-        app:sweepAngle="260"
-        app:trackWidth="10dp" />
+        app:progressColor="@color/red"
+        app:trackColor="@color/black"
+        app:startAngle="180"
+        app:sweepAngle="180"
+        app:trackWidth="10dp"
+        app:progressWidth="10dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
