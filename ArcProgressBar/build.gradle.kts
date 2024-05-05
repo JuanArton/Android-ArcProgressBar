@@ -1,7 +1,14 @@
+import org.gradle.api.publish.PublishingExtension
+
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.jetbrains.kotlin.android)
     id("maven-publish")
+    signing
+}
+
+configure<PublishingExtension> {
+    // ...
 }
 
 android {
@@ -31,6 +38,11 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+        }
+    }
 }
 
 dependencies {
@@ -42,3 +54,18 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 }
+
+publishing {
+    publications {
+        create<MavenPublication>("release") { // `create` is usually safer than `register`
+            groupId = "com.juanarton"
+            artifactId = "juanarton-apb"
+            version = "0.6"
+
+            afterEvaluate {
+                from(components["release"])
+            }
+        }
+    }
+}
+
